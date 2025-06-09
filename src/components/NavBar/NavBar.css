@@ -1,0 +1,113 @@
+.wrap{
+    align-items: center;
+    background-image: linear-gradient(180deg, rgba(116, 103, 103, 0.377), transparent);
+    border: 0;
+    font-size: 100%;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.Logo {
+    width: 180px;
+    margin-left: 40px;
+}
+
+.NavMenu{
+    padding-right: 30px;
+    align-items: center;
+    display: flex;
+    padding-right: 30px;
+    gap: 25px;
+    color: white;
+}
+
+span{
+    border: 0;
+    margin: 0;
+    outline: none;
+    vertical-align: initial;
+    padding: 10px;
+}
+
+.NavMenu a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+    /*CHANGE TOP TO AND LEFT TO MAKE HOVER UNDERLINE ON LINKS WORKKKK*/
+
+.NavMenu a::after{
+    content: '';
+    position: absolute;
+    height: 1.5px;
+    left: 20px;
+    bottom: 10px;
+    top: 25px;
+    width: 0%;
+    background: #ffffff;
+    transition: width .3s;
+}
+
+.NavMenu a:hover::after{
+    width: 92px;
+}
+
+.NavMenu .PortfolioA:hover::after{
+    width: 104px;
+}
+
+
+.logo{
+    padding-left: 20px;
+}
+
+
+#ThemeToggle{
+    background: none;
+    height: 65px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+#ThemeToggle :first-child{
+    display: none;
+}
+
+.DarkMode #ThemeToggle :last-child{
+    display: none;
+
+}
+
+.DarkMode #ThemeToggle :first-child{
+    display: block;
+
+}
+
+
+
+.FullScreenToggle{
+    background: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.FullScreenToggle:hover{
+    cursor: pointer;
+}
