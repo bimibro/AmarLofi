@@ -89,7 +89,7 @@ const TaskManager = () => {
     <div className='TaskManagerWrap'>
       <div className='TaskManagerButton'>
         <button onClick={() => setShow(!show)}>
-          <i id='TaskManagerButton' className="fa-regular fa-clock"></i>
+          <i id='TaskManagerButton' class="fa-solid fa-stopwatch"></i>
         </button>
       </div>
 

@@ -20,7 +20,6 @@ html, body, #root {
 
 body{
     background-color: #ffffff;
-    background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0, 0, 0, 0.42)), url('/public/Back.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,18 +32,10 @@ body::after{
     inset: 0;
     z-index:  0;
     pointer-events: none;
-    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0, 0, 0, 0.25)), url('/public/BackNight2.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s;
 }
 
-body.DarkMode{
-    color: #ffffff;
-    background-color: #000000;
-}
 
 body.DarkMode::after {
     opacity: 1;
