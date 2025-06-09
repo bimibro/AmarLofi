@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Back from './components/Back/Back';
 import TaskManager from './components/TaskManager/TaskManager';
-import Quotes from './components/Quotes/Quotes';
 import Player from './components/Player/Player';
 
 import './index.css'; // global styling
@@ -19,9 +18,8 @@ const App = () => {
     return (
         <div className={`navbar-wrapper ${darkMode ? 'dark-mode' : ''}`}>
             <NavBar onThemeToggle={handleThemeToggle} />
-            <Back />
+            <Back mode={darkMode ? 'dark' : 'light'} /> {/* Pass mode here */}
             <TaskManager />
-            <Quotes />
             <Player />
         </div>
     );

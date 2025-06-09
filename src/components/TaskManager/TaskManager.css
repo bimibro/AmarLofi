@@ -1,9 +1,9 @@
 
 .TaskManagerButton{
     position: fixed;         
-    top: 50%;
-    right: 0;
-    margin-right: 110px;                
+    top: 30%;
+    left: 0;
+    margin-left: 142px;                
     transform: translateY(-50%);
     width: 60px;             
     height: 60px;
@@ -27,13 +27,14 @@
     padding: 25px;
     border: 3px solid #ffffff;
     border-radius: 35px;
+    background-color: rgba(70, 69, 69, 0.815);
+
 }
 
 .TaskManagerButton button:hover{
     transition: all 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     border-color: #ffffff;
-    opacity: 80%;
 }
 
 .TaskManagerContentAppear {
@@ -43,11 +44,10 @@
     height: 450px;
     display: flex;
     flex-direction: column; /* Column layout for content / items */
-    top: 50%;
-    right: 0;
-    margin-right: 210px;
+    top: 40%;
+    margin-left: 235px;
     border-radius: 35px;
-    z-index: 100;
+    z-index: 100;   
     opacity: 0;
     transform: translateY(-50%); /* Start slightly off-screen */
     pointer-events: none;
@@ -56,10 +56,9 @@
 }
 
 .TaskManagerContentAppear.show{
-    opacity: 0.8;
+    opacity: 0.9;
     pointer-events: auto;
 }
-
 
 .TaskManagerContentAppear h4{
     font-size: 1.5rem;
