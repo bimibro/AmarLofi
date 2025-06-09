@@ -1,0 +1,15 @@
+.QuotesWrapper{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-left: 122px;
+    width: 30vw;
+    height: 20vh;
+    position: fixed;
+    top: 48%;
+    transform: translateY(-50%);
+    border: 1px, solid, #ffffff;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}

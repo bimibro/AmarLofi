@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Back from './components/Back/Back';
 import TaskManager from './components/TaskManager/TaskManager';
+import Quotes from './components/Quotes/Quotes';
+import Player from './components/Player/Player';
+
 import './index.css'; // global styling
 import './components/NavBar/NavBar.css'; // NavBar specific styling
 
@@ -18,6 +21,8 @@ const App = () => {
             <NavBar onThemeToggle={handleThemeToggle} />
             <Back />
             <TaskManager />
+            <Quotes />
+            <Player />
         </div>
     );
 };
