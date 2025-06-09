@@ -2,6 +2,8 @@
 
 This is a basic React application that serves as a starting point for building React applications.
 
+Simple Lo-fi study web app made for personal use.
+
 ## Project Structure
 
 ```
