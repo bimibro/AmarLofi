@@ -20,7 +20,7 @@ const App = () => {
             <NavBar onThemeToggle={handleThemeToggle} />
             <Back mode={darkMode ? 'dark' : 'light'} /> {/* Pass mode here */}
             <TaskManager />
-            <Player />
+            <Player audioSrc='./audio/UponRest.mp3' />
         </div>
     );
 };
