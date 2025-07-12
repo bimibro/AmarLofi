@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Player.css' 
 
-const Player = ({audioSrc}) => {
+const Player = ({audioSrc, title, artist, onNext, onPrev}) => {
 
     //Define the ref
     const audioRef = useRef(null); 
@@ -125,33 +125,20 @@ const Player = ({audioSrc}) => {
         }
     }, [volume])
 
+    // useEffect to tmake the song automatically play when the source is changed
+    const hasMounted = useRef(false);
 
-
-
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-//ADD MORE SONGS AND SONG TITLES AND ARTIST  AND VOLUME!!! ------------------------------------------------------------------------
-
-
-
+    useEffect(() => {
+        if (!hasMounted.current) {
+            hasMounted.current = true;
+            return; // Don't play on initial mount
+        }
+        if (audioRef.current) {
+            audioRef.current.load();
+            audioRef.current.play();
+            setIsPlaying(true);
+        }
+    }, [audioSrc]);
 
   return (
     <div className='PlayerWrapper'>
@@ -159,8 +146,8 @@ const Player = ({audioSrc}) => {
 
             <div className='TitleWrapper'>
                 <div className='SongTitle'>
-                    <span className='Title'>Upon Rest</span>
-                    <span className='Creator'>LOFIRU</span>
+                    <span className='Title'>{title}</span>
+                    <span className='Creator'>{artist}</span>
                 </div>
             </div>
 
@@ -169,13 +156,13 @@ const Player = ({audioSrc}) => {
                 <div className='ControlsWrapper'>
                     <div className='Player'>
                         <div className='Controls'>
-                            <button className='PrevBtn'>
+                            <button className='PrevBtn' onClick={onPrev}>
                                 <i class="fa-solid fa-backward"></i>
                             </button>
                             <button className='PlayBtn' onClick={handlePlayPause}>
                                 <i className={isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play"}></i>
                             </button>
-                            <button className='SkipBtn'>
+                            <button className='SkipBtn' onClick={onNext}>
                                 <i class="fa-solid fa-forward"></i>
                             </button>
                         </div>
