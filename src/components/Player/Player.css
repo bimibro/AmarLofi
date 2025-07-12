@@ -14,7 +14,7 @@
     padding: 60px;
     border-radius: 18px;
     gap: 32px; /* space between children */
-
+    padding: 100px;
     background-color: rgba(0, 0, 0, 0.425);
 }
 
@@ -26,14 +26,14 @@
 }
 
 .TitleWrapper .SongTitle{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
 }
 
 .SongTitle{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 250px;
 }
 
 span{
@@ -106,6 +106,7 @@ span{
 .VolumeIcon{
     color: #fff;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 /* Style the track */
@@ -117,6 +118,7 @@ span{
     border-radius: 15px;
     -webkit-appearance: none;
     appearance: none;   
+    cursor: pointer;
 }
 
 /* Chrome, Safari, Opera */
@@ -136,6 +138,25 @@ span{
     background: #adadad;
 }
 
+.CenterWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
 
-.TitleWrapper, .ControlsWrapper, .VolumeWrapper{
+.DurationWrapper{
+    display: flex;
+    transform: translateY(-50%);
+}
+
+.DurationSlider .slider,
+.DurationWrapper .slider {
+    width: 350px;
+    height: 10px;
+}
+
+.SongDuration{
+    margin-left: 10px;
 }
