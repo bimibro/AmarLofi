@@ -7,7 +7,7 @@ const Player = ({audioSrc}) => {
     const audioRef = useRef(null); 
 
     //state variables to manage the players volume, status (play / pause), duration and time
-    const [volume, setVolume] = useState(50);
+    const [volume, setVolume] = useState(30);
     const [isPlaying, setIsPlaying] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -16,6 +16,14 @@ const Player = ({audioSrc}) => {
     const handleVolumeChange = (e) => {
         setVolume(e.target.value);
     };
+
+    //function to handle icon on click  
+    const handleVolumeOnclick = () => {
+        setVolume(0);
+        if(volume === 0) {
+            setVolume(30);
+        }
+    }
 
     //function to handle play / pause status
     const handlePlayPause = () => {
@@ -110,6 +118,12 @@ const Player = ({audioSrc}) => {
         }
     }, [])
 
+    // useEffect to set the volume of the audio
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = volume / 100;
+        }
+    }, [volume])
 
 
 
@@ -145,8 +159,8 @@ const Player = ({audioSrc}) => {
 
             <div className='TitleWrapper'>
                 <div className='SongTitle'>
-                    <span className='Title'>Alternative Outro</span>
-                    <span className='Creator'>Lucki</span>
+                    <span className='Title'>Upon Rest</span>
+                    <span className='Creator'>LOFIRU</span>
                 </div>
             </div>
 
@@ -182,7 +196,7 @@ const Player = ({audioSrc}) => {
 
             <div className='VolumeWrapper'>
                 <div className='VolumeSlider'>
-                    <i className='VolumeIcon'>{volumeIcon}</i>
+                    <i className='VolumeIcon' onClick={handleVolumeOnclick}>{volumeIcon}</i>
                     <input type="range" min='0' max='100' value={volume} onChange={handleVolumeChange} className='slider'/>
                 </div>
             </div>
