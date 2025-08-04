@@ -1,4 +1,5 @@
-*{
+/* (*) represents all element on the page.  all elements within a * will inherit the styling options */
+*{ 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,32 +12,9 @@
     "YTLC" 500;
     letter-spacing: 1px;
 }
-
+ /*basic styling for html, root and body to inherit*/
 html, body, #root {
     height: 100%;
     width: 100%;
     padding: 0;
-}
-
-body{
-    background-color: #ffffff;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 1s, color 1s;
-}
-
-body::after{
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index:  0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-
-body.DarkMode::after {
-    opacity: 1;
 }

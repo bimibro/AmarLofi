@@ -1,4 +1,6 @@
+/*styling for the task manager button which appears on the left of the app.*/
 
+/*styling for the icon within the button, this includes the positioning (transorm, top, left etc.) it also includes styling for the TaskManagerButton button and hover to inherit*/
 .TaskManagerButton{
     position: fixed;         
     top: 30%;
@@ -15,7 +17,7 @@
     z-index: 100;  
 }
 
-
+/*styling for the actual button tag within TaskManagerButton. this includes the grayed out background as well as the border with padding to make it look nicer.*/
 .TaskManagerButton button{
     background: none;
     color: rgb(255, 255, 255);
@@ -28,20 +30,20 @@
     border: 3px solid #ffffff;
     border-radius: 35px;
     background-color: rgba(70, 69, 69, 0.815);
-
 }
-
+/*a hover effect for the button to transition to a darker background when hovered.*/
 .TaskManagerButton button:hover{
     transition: all 0.3s ease-in-out;
     background-color: rgb(0, 0, 0);
     border-color: #ffffff;
 }
 
+/*styling for the actual content of the task manager feature. it is fully styled and yet not shown until the button is pressed. this is done by setting the opacity to 0 and then increasing it to display on click using a variable named show which toggles when the button is pressed*/
 .TaskManagerContentAppear {
     position: fixed;
     background-color: rgb(0, 0, 0);
     width: 375px;
-    height: 450px;
+    height: 520px;
     display: flex;
     flex-direction: column; /* Column layout for content / items */
     top: 40%;
@@ -49,17 +51,18 @@
     border-radius: 35px;
     z-index: 100;   
     opacity: 0;
-    transform: translateY(-50%); /* Start slightly off-screen */
+    transform: translateY(-50%); /* aligns the content with the button*/
     pointer-events: none;
+    /*the transition effect (the opacity and content will appear over 0.4 seconds.*/
     transition: opacity 0.4s, transform 0.4s;
     color: #ffffff;
 }
-
+/*the after press styling (.show / show variable use state toggled to true)*/
 .TaskManagerContentAppear.show{
     opacity: 0.9;
     pointer-events: auto;
 }
-
+/*simple styling for the text within the content*/
 .TaskManagerContentAppear h4{
     font-size: 1.5rem;
     font-weight: 200;
@@ -72,6 +75,7 @@
     border-bottom: 1px solid #ffffff;
 }
 
+/*wrapper / box for the countdown*/
 .TaskManagerContentAppear .CountDownWrapper{
     display: flex;
     flex-direction: column;
@@ -81,7 +85,7 @@
     height: 15vh;
     margin-top: 100px;
 }
-
+/*styling for the number inputs within the feature*/
 .number-input{
     width: 100px;
     height: 60px;
@@ -94,7 +98,7 @@
     color: #ffffff;
     margin: 10px;
 }
-
+/*styling for the start timer button*/
 .buttonTimer{
     width: 120px;
     height: 50px;
@@ -106,12 +110,12 @@
     border: none;
     cursor: pointer;
 }
-
+/*a simple hover effect for the timer button (a lighter shaded background)*/
 .buttonTimerWrapper button:hover {
     background: rgba(255,255,255,0.1);
 }
 
-
+/*a box to display the timer and its controls*/
 .TimerDisplay{
     margin-top: 50px;
     width: 200px;
@@ -121,7 +125,7 @@
     flex-direction: column;
     
 }
-
+/*styling for the timer controls (pause and cancel) as well as a simple background colour hover effect for them both,*/
 .TimerControls{
     padding: 5px;
     height: 50px;
@@ -131,7 +135,6 @@
     align-items: center;
     gap: 15px;
 }
-
 .TimerControls button{
     margin-top: 20px;
     background: none;
@@ -141,7 +144,6 @@
     cursor: pointer;
     font-size: 1.2rem;
 }
-
 .TimerControls button:hover {
     background: rgba(255,255,255,0.1);
 }
