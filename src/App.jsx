@@ -1,3 +1,4 @@
+/*react and usestate import. other elements of the page imported.*/
 import React, { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Back from './components/Back/Back';
@@ -7,8 +8,7 @@ import Player from './components/Player/Player';
 import './index.css'; // global styling
 import './components/NavBar/NavBar.css'; // NavBar specific styling
 
-//array of songs: 
-
+/*array of songs for the program to use.*/
 const songs = [
     {    
         title: "Upon Rest",
@@ -54,12 +54,13 @@ const songs = [
 const App = () => {
     const [darkMode, setDarkmode] = useState(false);
     const [currentSong, setCurrentSong] = useState(0);
-    
+    // handler for the theme toggle. it will set darkmode from false to true and vice versa.
     const handleThemeToggle = () => {
         setDarkmode((prev) => !prev);
-        document.body.classList.toggle('DarkMode');
+        document.body.classList.toggle('DarkMode'); // toggles darkmode
     }
 
+    // handlers to go to the next and previous songs in the array.
     const handleNextSong = () => {
         setCurrentSong((prev) => (prev + 1) % songs.length);
     };
@@ -67,11 +68,13 @@ const App = () => {
         setCurrentSong((prev) => (prev - 1 + songs.length) % songs.length);
     };
     return (
+        //the main wrapper for the app.
         <div className={`navbar-wrapper ${darkMode ? 'dark-mode' : ''}`}>
             <NavBar onThemeToggle={handleThemeToggle} />
             <Back mode={darkMode ? 'dark' : 'light'} /> {/* Pass mode here */}
             <TaskManager />
-            <Player 
+            <Player
+            // the player component for the audio player. 
                 audioSrc={songs[currentSong].src}
                 title={songs[currentSong].title}
                 artist={songs[currentSong].artist}
