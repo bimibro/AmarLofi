@@ -8,7 +8,7 @@ const NavBar = ({ onThemeToggle }) => {
   return (
     <div className='wrap'> {/*navbar wrapper*/}
     {/*logo*/}
-        <a href="/"><img className='Logo' src="/LofiLogoText.gif" alt="logo" />
+        <a href='https://bimibro.github.io/AmarLofi/'><img className='Logo' src="LofiLogoText.gif" alt="logo" />
         </a>
         
         <div className='NavMenu'>{/*wrapper for the menu section (buttons)*/}
@@ -19,14 +19,14 @@ const NavBar = ({ onThemeToggle }) => {
             </a>
 
             {/*portfolio link (currently inactive)*/}
-            <a className='PortfolioA' target='' rel='noreferrer' href='/'>
+            <a className='PortfolioA' target='' rel='noreferrer' href='https://bimibro.github.io/AmarLofi/'>
                 <i className='fas fa-globe'></i>
                 <span>portfolio</span>
             </a>
             {/*theme toggle button*/}
             <button id='ThemeToggle' className='ThemeToggle'  onClick={onThemeToggle}>
-                <img src='/ModeToggle.png' alt='dark mode icon' width={50}/>
-                <img src='/ModeToggle.png' alt='light mode icon' width={50}/>
+                <img src='ModeToggle.png' alt='dark mode icon' width={50}/>
+                <img src='ModeToggle.png' alt='light mode icon' width={50}/>
             </button>
             {/*fullscreen toggle button*/}
             <button className='FullScreenToggle' onClick={() => {
