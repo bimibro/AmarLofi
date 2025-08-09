@@ -1,6 +1,8 @@
+// react and css imports
 import React from 'react'
 import './Back.css'
 
+// Back component that displays background videos based on the mode (light or dark)
 const Back = ({ mode }) => {
   return (
     <div className='BackWrapper'>

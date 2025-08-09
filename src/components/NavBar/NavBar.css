@@ -1,3 +1,4 @@
+/*styling for the navbar wrapper*/
 .wrap{
     align-items: center;
     background-image: linear-gradient(180deg, rgba(68, 68, 68, 0.719), transparent);
@@ -12,12 +13,19 @@
     width: 100%;
     z-index: 10;
 }
-
+/*styling for all span elements to inherit*/
+span{
+    border: 0;
+    margin: 0;
+    outline: none;
+    vertical-align: initial;
+    padding: 10px;
+}
+/*logo width*/
 .Logo {
     width: 180px;
-    margin-left: 40px;
 }
-
+/*styling for the nav menu / buttons. all .NavMenu children inherit from this.*/
 .NavMenu{
     padding-right: 30px;
     align-items: center;
@@ -26,15 +34,7 @@
     gap: 25px;
     color: white;
 }
-
-span{
-    border: 0;
-    margin: 0;
-    outline: none;
-    vertical-align: initial;
-    padding: 10px;
-}
-
+/*styling for links within the nav menu*/
 .NavMenu a{
     color: white;
     text-decoration: none;
@@ -44,10 +44,8 @@ span{
     margin: 0;
     box-sizing: border-box;
 }
-
-
-    /*CHANGE TOP TO AND LEFT TO MAKE HOVER UNDERLINE ON LINKS WORKKKK*/
-
+/*NavMenu links (a) after hover effects (a simple underline using left, bottom and top to position it correctly.)*/
+/*the underline always exists but its width is set to 0 and is then widened as needed in the after affects*/
 .NavMenu a::after{
     content: '';
     position: absolute;
@@ -59,21 +57,19 @@ span{
     background: #ffffff;
     transition: width .3s;
 }
-
+/*the hover effect (increasing the width over the transition time set above)*/
 .NavMenu a:hover::after{
     width: 92px;
 }
-
 .NavMenu .PortfolioA:hover::after{
     width: 104px;
 }
-
 
 .logo{
     padding-left: 20px;
 }
 
-
+/*styling for the theme toggle button*/
 #ThemeToggle{
     background: none;
     height: 65px;
@@ -81,25 +77,18 @@ span{
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
-
 #ThemeToggle :first-child{
     display: none;
 }
-
 .DarkMode #ThemeToggle :last-child{
     display: none;
 
 }
-
 .DarkMode #ThemeToggle :first-child{
     display: block;
-
 }
-
-
-
+/*styling for the full screen toggle button, including a hover effect*/
 .FullScreenToggle{
     background: none;
     border: none;
@@ -107,7 +96,6 @@ span{
     font-size: 20px;
     color: #ffffff;
 }
-
 .FullScreenToggle:hover{
     cursor: pointer;
 }
