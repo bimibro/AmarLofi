@@ -4,6 +4,8 @@ This is a basic React application that serves as a starting point for building R
 
 Simple Lo-fi study web app made for personal use.
 
+GitHub Pages Link: https://bimibro.github.io/AmarLofi
+
 ## Project Structure
 
 ```
